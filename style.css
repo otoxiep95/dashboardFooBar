@@ -14,19 +14,21 @@ body{
 header{
     width:100vw;
     height:10vh;
-    background-color: pink;
+    background-color: darkblue;
+    border-bottom: 4px solid white;
 }
 
 .main-container{
 width:100vw;
 height:90vh;
-background-color:blue;
+background: linear-gradient(135deg, rgba(175,55,18,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%);;
 }
 
 .menu-container{
     width:60%;
     height:15%;
     background-color: brown;
+    border: solid white 4px;
     float:left;
     margin: 1% 0% 3% 4%;
 }
@@ -34,7 +36,9 @@ background-color:blue;
 .screen-container {
     width: 60%;
     height: 70%;
-    background-color:green;
+    background: url(tap_background.jpg), rgba(175,55,18,0.6);
+    background-blend-mode: overlay;
+    border:4px solid white;
     float:left;
     margin: 4% 0% 0% 4%;
 }
@@ -48,6 +52,70 @@ background-color:blue;
 }
 
 /* TAP  */
+
+.screen-container{
+position:relative;
+}
+
+.graph-container{
+    width:80%;
+    height:80%;
+    position:absolute;
+    top:0;
+    bottom:0;
+    left:0;
+    right:0;
+    margin-top:10%;
+    margin:auto;
+}
+
+.beer-container {
+    width:calc(100% /9);
+    height:90%;
+    margin-top:10%;
+    display:inline-block;
+   margin-left:2%;
+}
+
+.bar-container{    
+    width:100%;
+    height:84%; /* DONT CHANGE */   
+}
+
+.name_container{
+    width:100%;
+    height:16%;
+    background-color:#af3712;
+}
+
+.beer-name{
+    font-size:0.7em;
+    font-family:helvetica;
+    text-align:center;
+    padding-top:18%;
+color:white;
+}
+
+
+
+
+svg {
+    background-color:none;
+}
+
+/* .point{
+    width: 10px;
+    height:10px;
+    background-color:black;
+    z-index: 20;
+    border-radius:50%;
+    margin: 100% calc(50% - 5px) 50% calc(50% - 5px);
+    background-color:#689793;
+  } */
+
+
+
+
 
 /* ORDER */
 
