@@ -1,7 +1,9 @@
 *{
     box-sizing: border-box;
     margin:0;
-    
+    font-family: Space Mono;
+    font-weight: 700;  
+    color:white; 
 }
 
 body{
@@ -19,28 +21,35 @@ header{
 }
 
 .main-container{
-width:100vw;
-height:90vh;
-background: linear-gradient(135deg, rgba(175,55,18,1) 0%,rgba(143,2,34,1) 44%,rgba(109,0,25,1) 100%);;
+    width:100vw;
+    height:90vh;
+    background: linear-gradient(140deg, rgba(7,23,58,1) 0%, rgba(94,22,5,1) 45%, rgba(175,55,18,1) 81%, rgba(244,181,78,1) 100%);
+}
+
+.menu-container, .screen-container, .queue-container{
+    border: solid white 4px;
+    box-shadow: 4px 10px 23px -4px rgba(0, 2, 0, 0.69);
+}
+
+.menu-container, .screen-container{
+    width:60%;
+    float:left;
+}
+
+
+.screen-container {
+    height: 70%;
+    background: url(tap_background.jpg), rgba(7,23,58,0.6);
+    background-size:cover;
+    background-repeat: no-repeat;
+    background-blend-mode: multiply; 
+    margin: 4% 0% 0% 4%;    
 }
 
 .menu-container{
-    width:60%;
     height:15%;
-    background-color: brown;
-    border: solid white 4px;
-    float:left;
+    background-color: brown;   
     margin: 1% 0% 3% 4%;
-}
-
-.screen-container {
-    width: 60%;
-    height: 70%;
-    background: url(tap_background.jpg), rgba(175,55,18,0.6);
-    background-blend-mode: overlay;
-    border:4px solid white;
-    float:left;
-    margin: 4% 0% 0% 4%;
 }
 
 .queue-container{
@@ -54,7 +63,14 @@ background: linear-gradient(135deg, rgba(175,55,18,1) 0%,rgba(143,2,34,1) 44%,rg
 /* TAP  */
 
 .screen-container{
-position:relative;
+    position:relative;
+}
+
+.screen-container h1{ /* TAPS TITLE */
+    width:80%;
+    height:80%;
+    margin-left:10%;
+    margin-top:8%;   
 }
 
 .graph-container{
@@ -65,16 +81,18 @@ position:relative;
     bottom:0;
     left:0;
     right:0;
-    margin-top:10%;
+    padding-top:10%;
     margin:auto;
+    display: grid;
+    grid-gap:2%;
+    grid-template-columns: repeat(7, 1fr);
 }
 
-.beer-container {
-    width:calc(100% /9);
-    height:90%;
-    margin-top:10%;
-    display:inline-block;
-   margin-left:2%;
+
+
+.beer-container { 
+    width:100%;
+    height:100%;
 }
 
 .bar-container{    
@@ -84,38 +102,38 @@ position:relative;
 
 .name_container{
     width:100%;
-    height:16%;
-    background-color:#af3712;
+    height:16%;   
 }
 
 .beer-name{
-    font-size:0.7em;
-    font-family:helvetica;
+    font-size:1em;
     text-align:center;
-    padding-top:18%;
-color:white;
+    padding-top:35%;
 }
 
 
+/* LEVEL SVG */
 
-
-svg {
-    background-color:none;
+.level{
+    z-index:1;
+    mix-blend-mode: screen;
+    stroke: white;
+    stroke-width: 3;
+    fill:rgba(175,55,18,0.8);
 }
 
-/* .point{
-    width: 10px;
-    height:10px;
-    background-color:black;
-    z-index: 20;
-    border-radius:50%;
-    margin: 100% calc(50% - 5px) 50% calc(50% - 5px);
-    background-color:#689793;
-  } */
+.bar_stroke{
+    z-index:5;
+}
 
-
-
-
+.label{
+    width:12%;
+    margin:0;
+   padding-top: 35%;
+   padding-bottom:15%;
+    position:absolute;
+    z-index:70;
+}
 
 /* ORDER */
 

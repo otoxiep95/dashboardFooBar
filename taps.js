@@ -43,14 +43,14 @@ function displayTaps(data) {
         const rect = document.createElementNS(NS, "rect");
 
         let clone = tapTemplate.cloneNode(true);
-
-        clone.querySelector(".beer-name").textContent = element.beer;
+        // MISSING PERCENTAGES
+        clone.querySelector(".beer-name").textContent = "100%";
         rect.setAttribute("width", 100);
         let height = (element.level) / 5;
         rect.setAttribute("height", height);
         rect.setAttribute("y", 500 - height);
-        rect.setAttribute("fill", "white");
-        rect.setAttribute("opacity", 0.8);
+        rect.classList.add("level");
+
         rect.id = "tap" + element.id;
 
         let svg = clone.querySelector("svg");
