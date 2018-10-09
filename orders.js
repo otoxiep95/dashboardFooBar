@@ -30,7 +30,7 @@ function buildQueue(data) {
     let oneOrder = customerOrder.order;
 
     //https://stackoverflow.com/questions/44959165/remove-duplicates-from-array-convert-to-array-of-objects-and-add-duplicate-coun
-    const result = oneOrder.reduce(function(prev, curr) {
+    const result = oneOrder.reduce(function (prev, curr) {
       const index = prev.findIndex(el => el.name === curr);
 
       if (index !== -1) {
@@ -44,7 +44,7 @@ function buildQueue(data) {
 
     result.forEach(orderObject => {
       //console.log(orderObject, beerTypesArray);
-      let beerImage = beerTypesArray.find(function(beer) {
+      let beerImage = beerTypesArray.find(function (beer) {
         return beer.name === orderObject.name;
       });
       orderObject.label = beerImage.label;
@@ -66,7 +66,7 @@ function updateQueue(data) {
   const template = document.querySelector(".order-item-template").content;
   const existing = document.querySelectorAll("ol li");
   existing.forEach(item => {
-    const inQueue = data.queue.find(function(el) {
+    const inQueue = data.queue.find(function (el) {
       return el.id == item.dataset.qid;
     });
     if (inQueue) {
@@ -90,7 +90,7 @@ function updateQueue(data) {
       let newOrder = item.order;
       console.log(newOrder);
 
-      const result = newOrder.reduce(function(prev, curr) {
+      const result = newOrder.reduce(function (prev, curr) {
         const index = prev.findIndex(el => el.name === curr);
 
         if (index !== -1) {
@@ -104,7 +104,7 @@ function updateQueue(data) {
       console.log(result);
       result.forEach(orderObject => {
         //console.log(orderObject, beerTypesArray);
-        let beerImage = beerTypesArray.find(function(beer) {
+        let beerImage = beerTypesArray.find(function (beer) {
           return beer.name === orderObject.name;
         });
         orderObject.label = beerImage.label;
@@ -126,7 +126,7 @@ function showQueueItem(order) {
     //change content
     clone
       .querySelector("img")
-      .setAttribute("src", "Images/labels/" + item.label);
+      .setAttribute("src", "labels/" + item.label);
     clone.querySelector("p").textContent = item.count;
     li.appendChild(clone);
   });
@@ -138,7 +138,7 @@ function addNewItem(newOrder) {
   const clone = template.cloneNode(true);
   const li = document.createElement("li");
   li.dataset.qid = item.id;
-  clone.querySelector("img").setAttribute("src", "Images/labels/" + item.label);
+  clone.querySelector("img").setAttribute("src", "labels/" + item.label);
   clone.querySelector("p").textContent = item.count;
   li.appendChild(clone);
   document.querySelector(".list-queue").appendChild(li);
