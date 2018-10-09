@@ -1,3 +1,4 @@
+
 *{
     box-sizing: border-box;
     margin:0;
@@ -6,11 +7,11 @@
     color:white; 
 }
 
-body{
-    margin:0;
-    padding:0;
-    width:100%;
-    height: 100%;
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
 }
 
 header{
@@ -52,12 +53,14 @@ header{
     margin: 1% 0% 3% 4%;
 }
 
-.queue-container{
-    width:30%;
-    height: 87%;
-    background-color: yellow;
-    float:right;
-    margin: 4% 4% 3% 2%;
+.queue-container {
+  width: 30%;
+  height: 87%;
+  background-color: yellow;
+  float: right;
+  margin: 4% 4% 3% 2%;
+
+  overflow-y: scroll;
 }
 
 /* TAP  */
@@ -136,4 +139,18 @@ header{
 }
 
 /* ORDER */
-
+.list-queue li {
+  display: block;
+  border: black 5px solid;
+  margin: 2% 5% 0 5%;
+}
+.order-item {
+  display: inline;
+}
+.order-item img {
+  display: inline;
+  width: 20%;
+}
+.order-item p {
+  display: inline;
+}
