@@ -1,10 +1,9 @@
-
-*{
-    box-sizing: border-box;
-    margin:0;
-    font-family: Space Mono;
-    font-weight: 700;  
-    color:white; 
+* {
+  box-sizing: border-box;
+  margin: 0;
+  font-family: Space Mono;
+  font-weight: 700;
+  color: white;
 }
 
 body {
@@ -14,49 +13,57 @@ body {
   height: 100%;
 }
 
-header{
-    width:100vw;
-    height:10vh;
-    background-color: darkblue;
-    border-bottom: 4px solid white;
+header {
+  width: 100vw;
+  height: 10vh;
+  background-color: darkblue;
+  border-bottom: 4px solid white;
 }
 
-.main-container{
-    width:100vw;
-    height:90vh;
-    background: linear-gradient(140deg, rgba(7,23,58,1) 0%, rgba(94,22,5,1) 45%, rgba(175,55,18,1) 81%, rgba(244,181,78,1) 100%);
+.main-container {
+  width: 100vw;
+  height: 90vh;
+  background: linear-gradient(
+    140deg,
+    rgba(7, 23, 58, 1) 0%,
+    rgba(94, 22, 5, 1) 45%,
+    rgba(175, 55, 18, 1) 81%,
+    rgba(244, 181, 78, 1) 100%
+  );
 }
 
-.menu-container, .screen-container, .queue-container{
-    border: solid white 4px;
-    box-shadow: 4px 10px 23px -4px rgba(0, 2, 0, 0.69);
+.menu-container,
+.screen-container,
+.queue-container {
+  border: solid white 4px;
+  box-shadow: 4px 10px 23px -4px rgba(0, 2, 0, 0.69);
 }
 
-.menu-container, .screen-container{
-    width:60%;
-    float:left;
+.menu-container,
+.screen-container {
+  width: 60%;
+  float: left;
 }
-
 
 .screen-container {
-    height: 70%;
-    background: url(tap_background.jpg), rgba(7,23,58,0.6);
-    background-size:cover;
-    background-repeat: no-repeat;
-    background-blend-mode: multiply; 
-    margin: 4% 0% 0% 4%;    
+  height: 70%;
+  background: url(tap_background.jpg), rgba(7, 23, 58, 0.6);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-blend-mode: multiply;
+  margin: 4% 0% 0% 4%;
 }
 
-.menu-container{
-    height:15%;
-    background-color: brown;   
-    margin: 1% 0% 3% 4%;
+.menu-container {
+  height: 15%;
+  background-color: brown;
+  margin: 1% 0% 3% 4%;
 }
 
 .queue-container {
   width: 30%;
   height: 87%;
-  background-color: yellow;
+  background-color: darkblue;
   float: right;
   margin: 4% 4% 3% 2%;
 
@@ -65,77 +72,75 @@ header{
 
 /* TAP  */
 
-.screen-container{
-    position:relative;
+.screen-container {
+  position: relative;
 }
 
-.screen-container h1{ /* TAPS TITLE */
-    width:80%;
-    height:80%;
-    margin-left:10%;
-    margin-top:8%;   
+.screen-container h1 {
+  /* TAPS TITLE */
+  width: 80%;
+  height: 80%;
+  margin-left: 10%;
+  margin-top: 8%;
 }
 
-.graph-container{
-    width:80%;
-    height:80%;
-    position:absolute;
-    top:0;
-    bottom:0;
-    left:0;
-    right:0;
-    padding-top:10%;
-    margin:auto;
-    display: grid;
-    grid-gap:2%;
-    grid-template-columns: repeat(7, 1fr);
+.graph-container {
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 10%;
+  margin: auto;
+  display: grid;
+  grid-gap: 2%;
+  grid-template-columns: repeat(7, 1fr);
 }
 
-
-
-.beer-container { 
-    width:100%;
-    height:100%;
+.beer-container {
+  width: 100%;
+  height: 100%;
 }
 
-.bar-container{    
-    width:100%;
-    height:84%; /* DONT CHANGE */   
+.bar-container {
+  width: 100%;
+  height: 84%; /* DONT CHANGE */
 }
 
-.name_container{
-    width:100%;
-    height:16%;   
+.name_container {
+  width: 100%;
+  height: 16%;
 }
 
-.beer-name{
-    font-size:1em;
-    text-align:center;
-    padding-top:35%;
+.beer-name {
+  font-size: 1em;
+  text-align: center;
+  padding-top: 35%;
 }
-
 
 /* LEVEL SVG */
 
-.level{
-    z-index:1;
-    mix-blend-mode: screen;
-    stroke: white;
-    stroke-width: 3;
-    fill:rgba(175,55,18,0.8);
+.level {
+  z-index: 1;
+  mix-blend-mode: screen;
+  stroke: white;
+  stroke-width: 3;
+  fill: rgba(175, 55, 18, 0.8);
 }
 
-.bar_stroke{
-    z-index:5;
+.bar_stroke {
+  z-index: 5;
 }
 
-.label{
-    width:12%;
-    margin:0;
-   padding-top: 35%;
-   padding-bottom:15%;
-    position:absolute;
-    z-index:70;
+.label {
+  width: 12%;
+  margin: 0;
+  padding-top: 35%;
+  padding-bottom: 15%;
+  position: absolute;
+  z-index: 70;
 }
 
 /* ORDER */
