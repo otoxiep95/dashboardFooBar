@@ -11,7 +11,21 @@
 </head>
 
 <body>
-    <header></header>
+    <header>
+
+        <div class="header-left">
+            <img id="logo" src="icons/data_bar_moodboard.png" />
+            <div class="bartender-container">
+
+
+            </div>
+        </div>
+        <div class="time-container">
+            <h1 id="open">open</h1>
+            <h1>time</h1>
+        </div>
+
+    </header>
     <div class="main-container">
         <div class="screen-container">
             <h1>TAPS:</h1>
@@ -22,7 +36,14 @@
             <h2 class="title-queue">ORDERS</h2>
             <ol class="list-queue"></ol>
         </div>
-        <div class="menu-container"></div>
+        <div class="menu-container">
+
+            <a><img id="tap-button" alt="" src="icons/data_bar_moodboard-17.png" /></a>
+            <a><img alt="" src="icons/data_bar_moodboard-18.png" /></a>
+            <a><img alt="" src="icons/data_bar_moodboard-19.png" /></a>
+            <a><img alt="" src="icons/data_bar_moodboard-20.png" /></a>
+
+        </div>
     </div>
 
     <template class="tap-template">
@@ -56,6 +77,12 @@
 
         </div>
     </template>
+    <template class="bartender-template">
+        <div class="bartender">
+            <p class="bartender-name">bartender</p>
+            <div class="cercle"></div>
+        </div>
+    </template>
 
 
 
@@ -63,7 +90,7 @@
 
     <script src="https://kea-alt-del.dk/2018/front/foobar.js"></script>
     <script src="taps.js"></script>
-
+    <script src="menu.js"></script>
     <script src="orders.js"></script>
 </body>
 
