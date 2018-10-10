@@ -124,9 +124,7 @@ function showQueueItem(order) {
     const clone = template.cloneNode(true);
     //console.log(item);
     //change content
-    clone
-      .querySelector("img")
-      .setAttribute("src", "Images/labels/" + item.label);
+    clone.querySelector("img").setAttribute("src", "labels/" + item.label);
     clone.querySelector("p").textContent = item.count;
     li.appendChild(clone);
   });
@@ -138,7 +136,7 @@ function addNewItem(newOrder) {
   const clone = template.cloneNode(true);
   const li = document.createElement("li");
   li.dataset.qid = item.id;
-  clone.querySelector("img").setAttribute("src", "Images/labels/" + item.label);
+  clone.querySelector("img").setAttribute("src", "labels/" + item.label);
   clone.querySelector("p").textContent = item.count;
   li.appendChild(clone);
   document.querySelector(".list-queue").appendChild(li);
