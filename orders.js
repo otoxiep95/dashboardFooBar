@@ -73,9 +73,9 @@ function updateQueue(data) {
     if (inQueue) {
       //do nothing
     } else {
-      //animateRemoval(item);
+      animateRemoval(item);
       //console.log(item);
-      item.remove();
+      //item.remove();
     }
   });
   /*console.log(
@@ -145,4 +145,42 @@ function addNewItem(newOrder) {
   document.querySelector(".list-queue").appendChild(li);
 }
 
-function animateRemoval(item) {}
+function animateRemoval(item) {
+  console.log(item);
+  item.style.opacity = "0";
+  item.style.transition = "opacity 0.3s ease";
+  // gives x, y , height, width of the client
+
+  const rect = item.getBoundingClientRect();
+  console.log(rect);
+  item.addEventListener("transitionend", function() {
+    //find the nextSiblig
+    console.log("transitionended");
+    let nextSibling = item.nextElementSibling;
+
+    if (nextSibling !== null) {
+      console.log("there is next");
+      // if its not the last student
+      nextSibling.addEventListener("transitionend", function() {
+        // reset all the translateY
+        let nextItem = item.nextElementSibling;
+        while (nextItem !== null) {
+          nextItem.style.transform = "translateY(0)";
+          nextItem.style.transition = "transform 0s";
+          nextItem = nextItem.nextElementSibling;
+        }
+        console.log("delete" + item);
+        console.log(item);
+        //remove that article
+        item.remove();
+      });
+      while (nextSibling !== null) {
+        console.log("there is next to go up");
+        // animate translate Y of next sibling on a loop until last one
+        nextSibling.style.transform = "translateY(-" + rect.height + "px)";
+        nextSibling.style.transition = "transform 0.5s";
+        nextSibling = nextSibling.nextElementSibling;
+      }
+    }
+  });
+}
