@@ -115,9 +115,9 @@ header {
 }
 
 .beer-name {
-  font-size: 1em;
+  font-size: 1.5em;
   text-align: center;
-  padding-top: 35%;
+  padding-top: 30%;
 }
 
 /* LEVEL SVG */
@@ -144,20 +144,51 @@ header {
 }
 
 /* ORDER */
+
+.queue-container{
+    background: url(order_background.jpg), rgba(7, 23, 58, 0.6);
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.title-queue{
+    margin-top:16%;
+    margin-left:10%;
+    margin-bottom:8%;
+    font-size:2em;
+}
+
+ol{
+    padding:0;
+    
+}
+
 .list-queue li {
-  display: block;
-  border: black 5px solid;
-  margin: 2% 5% 0 5%;
+  /* display: block; */
+  border: solid 2px white;
+  margin: 2% 4% 0 4%;
+  display:grid;
+  grid-template-columns: repeat(2, 1fr);
 }
 .order-item {
-  display: inline;
+  /* display: inline; */
+  width:75%;
+  margin: 13%;
+
 }
 .order-item img {
-  display: inline;
-  width: 20%;
+ float:right;
+  width: 60%;
+  margin-right:5%;
+  
 }
 .order-item p {
-  display: inline;
+    /* margin-top: 7%;
+    margin-left:12%; */
+  padding: 10% 0 10% 10%;
+    height: 100%;
+    float: left;
+  font-size:2em;
 }
 
 /* MENUS */
@@ -213,10 +244,10 @@ header {
 }
 
 .time-container {
-  width: 20%;
+  width: 30%;
   height: 10vh;
   /* display:inline-block; */
-  margin-right: 5%;
+  /* margin-right: 5%; */
   padding: 2% 2% 2% 2%;
   float: right;
 }

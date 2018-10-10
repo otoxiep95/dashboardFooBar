@@ -73,9 +73,9 @@ function updateQueue(data) {
     if (inQueue) {
       //do nothing
     } else {
-      animateRemoval(item);
+      //animateRemoval(item);
       //console.log(item);
-      //item.remove();
+      item.remove();
     }
   });
   /*console.log(
@@ -145,38 +145,4 @@ function addNewItem(newOrder) {
   document.querySelector(".list-queue").appendChild(li);
 }
 
-function animateRemoval(item) {
-  item.style.opacity = "0";
-  item.style.transition = "opacity 0.3s ease";
-  const rect = item.getBoundingClientRect();
-  console.log(rect);
-  item.addEventListener("transitionend", function() {
-    //find the nextSiblig
-    let nextSibling = item.nextElementSibling;
-
-    if (nextSibling !== null) {
-      // if its not the last student
-      nextSibling.addEventListener("transitionend", function() {
-        // reset all the translateY
-        let nextItem = item.nextElementSibling;
-        while (nextItem !== null) {
-          nextItem.style.transform = "translateY(0)";
-          nextItem.style.transition = "transform 0s";
-          nextItem = nextItem.nextElementSibling;
-        }
-
-        //remove that article
-        item.remove();
-      });
-      while (nextSibling !== null) {
-        // animate translate Y of next sibling on a loop until last one
-        nextSibling.style.transform = "translateY(-" + rect.height + "px)";
-        nextSibling.style.transition = "transform 0.5s";
-        nextSibling = nextSibling.nextElementSibling;
-      }
-    } else {
-      // just remove without the next sibling moving cause its the last student
-      item.remove();
-    }
-  });
-}
+function animateRemoval(item) {}
