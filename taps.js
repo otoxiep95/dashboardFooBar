@@ -15,7 +15,7 @@ init();
 function update() {
   let data = JSON.parse(FooBar.getData());
 
-  // updateTaps(data);
+  updateTaps(data);
 }
 
 function updateTaps(newdata) {
