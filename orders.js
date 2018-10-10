@@ -1,4 +1,5 @@
-"use strict";
+("use strict");
+
 const queueList = document.querySelector(".list-queue");
 
 function init() {
@@ -72,7 +73,9 @@ function updateQueue(data) {
     if (inQueue) {
       //do nothing
     } else {
-      item.remove();
+      animateRemoval(item);
+      //console.log(item);
+      //item.remove();
     }
   });
   /*console.log(
@@ -82,13 +85,13 @@ function updateQueue(data) {
   data.queue.forEach(item => {
     if (document.querySelector(`li[data-qid="${item.id}"]`)) {
     } else {
-      console.log("add", item);
+      // console.log("add", item);
 
       //console.log(item);
       //change content
 
       let newOrder = item.order;
-      console.log(newOrder);
+      // console.log(newOrder);
 
       const result = newOrder.reduce(function(prev, curr) {
         const index = prev.findIndex(el => el.name === curr);
@@ -101,7 +104,7 @@ function updateQueue(data) {
 
         return prev;
       }, []);
-      console.log(result);
+      // console.log(result);
       result.forEach(orderObject => {
         //console.log(orderObject, beerTypesArray);
         let beerImage = beerTypesArray.find(function(beer) {
@@ -140,4 +143,40 @@ function addNewItem(newOrder) {
   clone.querySelector("p").textContent = item.count;
   li.appendChild(clone);
   document.querySelector(".list-queue").appendChild(li);
+}
+
+function animateRemoval(item) {
+  item.style.opacity = "0";
+  item.style.transition = "opacity 0.3s ease";
+  const rect = item.getBoundingClientRect();
+  console.log(rect);
+  item.addEventListener("transitionend", function() {
+    //find the nextSiblig
+    let nextSibling = item.nextElementSibling;
+
+    if (nextSibling !== null) {
+      // if its not the last student
+      nextSibling.addEventListener("transitionend", function() {
+        // reset all the translateY
+        let nextItem = item.nextElementSibling;
+        while (nextItem !== null) {
+          nextItem.style.transform = "translateY(0)";
+          nextItem.style.transition = "transform 0s";
+          nextItem = nextItem.nextElementSibling;
+        }
+
+        //remove that article
+        item.remove();
+      });
+      while (nextSibling !== null) {
+        // animate translate Y of next sibling on a loop until last one
+        nextSibling.style.transform = "translateY(-" + rect.height + "px)";
+        nextSibling.style.transition = "transform 0.5s";
+        nextSibling = nextSibling.nextElementSibling;
+      }
+    } else {
+      // just remove without the next sibling moving cause its the last student
+      item.remove();
+    }
+  });
 }

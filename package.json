@@ -1,0 +1,22 @@
+{
+  "name": "dashboardassignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "menu.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/otoxiep95/dashboardFooBar.git"
+  },
+  "author": "Alberto Pacheco & Mathilde Frachon",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/otoxiep95/dashboardFooBar/issues"
+  },
+  "homepage": "https://github.com/otoxiep95/dashboardFooBar#readme",
+  "dependencies": {
+    "gsap": "^2.0.2"
+  }
+}

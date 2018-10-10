@@ -3,7 +3,7 @@ const NS = "http://www.w3.org/2000/svg";
 
 function init() {
   let data = JSON.parse(FooBar.getData());
-  console.log(data);
+  // console.log(data);
   // Make almost all templates charts etc...
 
   displayTaps(data);
@@ -15,7 +15,7 @@ init();
 function update() {
   let data = JSON.parse(FooBar.getData());
 
-  updateTaps(data);
+  // updateTaps(data);
 }
 
 function updateTaps(newdata) {
@@ -53,11 +53,11 @@ function displayTaps(data) {
     rect.classList.add("level");
 
     rect.id = "tap" + element.id;
-    console.log(element.beer);
+    // console.log(element.beer);
     let beerImage = beerTypesArray.find(function(beerName) {
       return beerName.name === element.beer;
     });
-    console.log(beerImage);
+    // console.log(beerImage);
     clone
       .querySelector(".label")
       .setAttribute("src", "labels/" + beerImage.label);
