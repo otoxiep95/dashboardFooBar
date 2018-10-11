@@ -5,8 +5,12 @@ function init() {
   let data = JSON.parse(FooBar.getData());
   // console.log(data);
   // Make almost all templates charts etc...
+  const mainContainerTitles = document.querySelector(".main-container h1");
+
+  TweenMax.from(mainContainerTitles, 1, { opacity: 0 });
 
   displayTaps(data);
+  setTimeout(update, 100);
   setInterval(update, 5000);
   // setInterval(show, 5000);
 }
@@ -34,13 +38,16 @@ function updateTaps(newdata) {
     let crossIcon = levelNumber.nextElementSibling;
     let warningIcon = crossIcon.nextElementSibling;
     console.log(crossIcon);
-    if (element.level >= 250) {
+    if (height >= 40) {
       //do nothing
-    } else if (element.level <= 250 && element.level > 0) {
+    } else if (height <= 40 && height > 0) {
       //display warning
+      levelNumber.classList.add("none");
+      warningIcon.classList.remove("none");
     } else {
       //display cross~
-      warning;
+      levelNumber.classList.add("none");
+      warningIcon.classList.add("none");
       crossIcon.classList.remove("none");
     }
   });
@@ -60,8 +67,8 @@ function displayTaps(data) {
       (element.level * 100) / 2500 + "%";
     rect.setAttribute("width", 100);
     let height = element.level / 6.25;
-    rect.setAttribute("height", height);
-    rect.setAttribute("y", 400 - height);
+    rect.setAttribute("height", 0);
+    rect.setAttribute("y", 400);
     rect.classList.add("level");
 
     rect.id = "tap" + element.id;
@@ -76,6 +83,8 @@ function displayTaps(data) {
     let svg = clone.querySelector("svg");
 
     svg.appendChild(rect);
+    TweenMax.fromTo(svg, 1.2, { opacity: 0 }, { opacity: 0.8 });
+    TweenMax.from(clone.querySelector(".percentage-tap"), 1, { opacity: 0 });
     graphContainer.appendChild(clone);
   });
 }

@@ -26,6 +26,9 @@ function updateMenu(data) {
   m = m < 10 ? "0" + m : m;
 
   var output = h + ":" + m;
+  if (h >= 22) {
+    document.querySelector("#open").textContent = "closed";
+  }
   document.querySelector("#time").textContent = output;
   bartendersArray.forEach(bartender => {
     if (bartender.status === "WORKING") {

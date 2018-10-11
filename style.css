@@ -57,20 +57,18 @@ header {
   background-blend-mode: multiply;
 }
 
-#alc-screen{
+#alc-screen {
   background: url(beer-3445988_1280.jpg), rgba(94, 22, 5, 0.6);
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
-  
 }
 
-#type-screen{
+#type-screen {
   background: url(wheat-3241114_1280.jpg), rgba(94, 22, 5, 0.6);
   background-size: cover;
   background-repeat: no-repeat;
   background-blend-mode: multiply;
-  
 }
 
 .menu-container {
@@ -147,6 +145,7 @@ header {
   stroke: white;
   stroke-width: 3;
   fill: rgba(175, 55, 18, 0.8);
+  transition: all 0.8s ease;
 }
 
 .bar_stroke {
@@ -162,63 +161,60 @@ header {
   z-index: 70;
 }
 
-.cross{
-  width:50%;
-  margin:22%;
+.cross {
+  width: 50%;
+  margin: 22%;
 }
 
-.warning{
-  width:60%;
-  margin-top:0;
-  margin:20%;
+.warning {
+  width: 60%;
+  margin-top: 0;
+  margin: 20%;
 }
 
 /* ORDER */
 
-.queue-container{
-    /* background: url(order_background.jpg), rgba(7, 23, 58, 0.6);
+.queue-container {
+  /* background: url(order_background.jpg), rgba(7, 23, 58, 0.6);
   background-size: cover;
   background-repeat: no-repeat; */
 }
 
-.title-queue{
-    margin-top:16%;
-    margin-left:10%;
-    margin-bottom:8%;
-    font-size:2em;
+.title-queue {
+  margin-top: 16%;
+  margin-left: 10%;
+  margin-bottom: 8%;
+  font-size: 2em;
 }
 
-ol{
-    padding:0;
-    
+ol {
+  padding: 0;
 }
 
 .list-queue li {
   /* display: block; */
   border: solid 2px white;
   margin: 2% 4% 0 4%;
-  display:grid;
+  display: grid;
   grid-template-columns: repeat(2, 1fr);
 }
 .order-item {
   /* display: inline; */
-  width:75%;
+  width: 75%;
   margin: 13%;
-
 }
 .order-item img {
- float:right;
+  float: right;
   width: 60%;
-  margin-right:5%;
-  
+  margin-right: 5%;
 }
 .order-item p {
-    /* margin-top: 7%;
+  /* margin-top: 7%;
     margin-left:12%; */
   padding: 10% 0 10% 10%;
-    height: 100%;
-    float: left;
-  font-size:2em;
+  height: 100%;
+  float: left;
+  font-size: 2em;
 }
 
 /* MENUS */
@@ -321,7 +317,7 @@ header h1 {
 
 /* ALCOHOL */
 
-#alcohol-container{
+#alcohol-container {
   width: 80%;
   height: 80%;
   position: absolute;
@@ -333,30 +329,29 @@ header h1 {
   margin: auto;
 }
 
-td{
-  padding-top:2%;
+td {
+  padding-top: 2%;
 }
 
-.beer-name{
-  padding:0;
-  width:70%;
-  font-size:1.3em;
-
+.beer-name {
+  padding: 0;
+  width: 70%;
+  font-size: 1.3em;
 }
 
-.alcohol-percentage{
-  font-size:1.3em;
-  width:10%;
+.alcohol-percentage {
+  font-size: 1.3em;
+  width: 10%;
 }
 
-.beer-icon{
-  width:20%;
-  float:right;
+.beer-icon {
+  width: 20%;
+  float: right;
 }
 
 /* TYPE */
 
-#type-container{
+#type-container {
   width: 80%;
   height: 80%;
   position: absolute;
@@ -368,14 +363,14 @@ td{
   margin: auto;
 }
 
-.type-name{
-  font-size:1.3em;
-  width:64%;
+.type-name {
+  font-size: 1.3em;
+  width: 64%;
 }
 
 /* DESC */
 
-#desc-container{
+#desc-container {
   width: 80%;
   height: 80%;
   position: absolute;
@@ -385,59 +380,62 @@ td{
   right: 0;
   padding-top: 10%;
   margin: auto;
-  display:grid;
-  grid-template-columns: repeat(6,1fr);
-  overflow-y:scroll;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  overflow-y: scroll;
 }
 
-.desc-icon{
-  width:50%;
-  grid-column:1/2;
-  margin-left:15%;
-  margin-top:15%;
+.desc-icon {
+  width: 50%;
+  grid-column: 1/2;
+  margin-left: 15%;
+  margin-top: 15%;
 }
 
-.beer-image{
-  width:70%;
-  grid-column:1/2;
-  padding:5%;
+.beer-image {
+  width: 70%;
+  grid-column: 1/2;
+  padding: 5%;
 }
 
-.beer-title, .beer-appearance, .beer-flavor, .beer-aroma{
+.beer-title,
+.beer-appearance,
+.beer-flavor,
+.beer-aroma {
   grid-column: 2/-1;
 }
 
-.beer-title{
-  padding:0;
-  width:70%;
-  font-size:1.3em;
+.beer-title {
+  padding: 0;
+  width: 70%;
+  font-size: 1.3em;
 }
 
-.beer-appearance, .beer-aroma, .beer-flavor{
-  margin-top:2%;
+.beer-appearance,
+.beer-aroma,
+.beer-flavor {
+  margin-top: 2%;
 }
 
-#desc-title{
-  width:60%;
-  float:left;
+#desc-title {
+  width: 60%;
+  float: left;
 }
 
-#previous, #next{
-  float:right;
-  font-size:2.5em;
-  margin-top:8%;
-  margin-right:10%;
+#previous,
+#next {
+  float: right;
+  font-size: 2.5em;
+  margin-top: 8%;
+  margin-right: 10%;
 }
-
-
-
 
 /* CLASS JS */
 
-.none{
-  display:none;
+.none {
+  display: none;
 }
 
-.here{
-  display:block;
+.here {
+  display: block;
 }

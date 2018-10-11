@@ -5,7 +5,8 @@ const queueList = document.querySelector(".list-queue");
 function init() {
   let data = JSON.parse(FooBar.getData());
   console.log(data);
-
+  const orderTitle = document.querySelector(".title-queue");
+  TweenMax.from(orderTitle, 1, { opacity: 0 });
   // Make almost all templates charts etc...
   buildQueue(data);
 
@@ -61,6 +62,7 @@ function buildQueue(data) {
 
   // queueList.appendChild(clone);
 }
+
 function updateQueue(data) {
   console.log(data);
   let beerTypesArray = data.beertypes;
@@ -73,9 +75,9 @@ function updateQueue(data) {
     if (inQueue) {
       //do nothing
     } else {
-      //animateRemoval(item);
+      animateRemoval(item);
       //console.log(item);
-      item.remove();
+      //item.remove();
     }
   });
   /*console.log(
@@ -131,18 +133,14 @@ function showQueueItem(order) {
     clone.querySelector("p").textContent = item.count;
     li.appendChild(clone);
   });
-
+  TweenMax.from(li, 1, { y: 50, opacity: 0 });
   document.querySelector(".list-queue").appendChild(li);
 }
 
-function addNewItem(newOrder) {
-  const clone = template.cloneNode(true);
-  const li = document.createElement("li");
-  li.dataset.qid = item.id;
-  clone.querySelector("img").setAttribute("src", "labels/" + item.label);
-  clone.querySelector("p").textContent = item.count;
-  li.appendChild(clone);
-  document.querySelector(".list-queue").appendChild(li);
+function animateRemoval(item) {
+  item.style.opacity = "0";
+  item.style.transition = "opacity 0.4s";
+  item.addEventListener("transitionend", function() {
+    item.remove();
+  });
 }
-
-function animateRemoval(item) {}
