@@ -162,6 +162,17 @@ header {
   z-index: 70;
 }
 
+.cross{
+  width:50%;
+  margin:22%;
+}
+
+.warning{
+  width:60%;
+  margin-top:0;
+  margin:20%;
+}
+
 /* ORDER */
 
 .queue-container{
