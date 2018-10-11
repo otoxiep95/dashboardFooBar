@@ -40,9 +40,13 @@ function updateTaps(newdata) {
     console.log(crossIcon);
     if (height >= 40) {
       //do nothing
+      levelNumber.classList.remove("none");
+      warningIcon.classList.add("none");
+      crossIcon.classList.add("none");
     } else if (height <= 40 && height > 0) {
       //display warning
       levelNumber.classList.add("none");
+      crossIcon.classList.add("none");
       warningIcon.classList.remove("none");
     } else {
       //display cross~
