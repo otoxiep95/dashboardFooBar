@@ -43,14 +43,26 @@
 
         <div class="screen-container none" id="type-screen">
             <h1>TYPE:</h1>
-            <div id="desc-container">
+            <div id="type-container">
             </div>
         </div>
 
         <div class="screen-container none" id="desc-screen">
-            <h1>DESCRIPTION:</h1>
+            <h1 id="desc-title">DESCRIPTION:</h1>
+
             <div id="desc-container">
+                <img src="" class="beer-image" />
+                <h3 class="beer-title"></h3>
+
+                <img src="icons/icon-appearance.png" class="desc-icon" />
+                <p class="beer-appearance"></p>
+                <img src="icons/icon-flavor.png" class="desc-icon" />
+                <p class="beer-flavor"></p>
+                <img src="icons/icon-aroma.png" class="desc-icon" />
+                <p class="beer-aroma"></p>
             </div>
+            <a id="next">&#62;</a>
+            <a id="previous">&#60;</a>
         </div>
 
         <div class="queue-container">
@@ -123,12 +135,7 @@
             <td class="beer-name"></td>
         </tr>
     </template>
-    <template class="desc-template">
-        <tr class="table-container">
-            <td class="type-name"></td>
-            <td class="beer-name"></td>
-        </tr>
-    </template>
+
     <template class="bartender-template">
         <div class="bartender">
             <p class="bartender-name">bartender</p>

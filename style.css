@@ -364,6 +364,59 @@ td{
 
 /* DESC */
 
+#desc-container{
+  width: 80%;
+  height: 80%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 10%;
+  margin: auto;
+  display:grid;
+  grid-template-columns: repeat(6,1fr);
+  overflow-y:scroll;
+}
+
+.desc-icon{
+  width:50%;
+  grid-column:1/2;
+  margin-left:15%;
+  margin-top:15%;
+}
+
+.beer-image{
+  width:70%;
+  grid-column:1/2;
+  padding:5%;
+}
+
+.beer-title, .beer-appearance, .beer-flavor, .beer-aroma{
+  grid-column: 2/-1;
+}
+
+.beer-title{
+  padding:0;
+  width:70%;
+  font-size:1.3em;
+}
+
+.beer-appearance, .beer-aroma, .beer-flavor{
+  margin-top:2%;
+}
+
+#desc-title{
+  width:60%;
+  float:left;
+}
+
+#previous, #next{
+  float:right;
+  font-size:2.5em;
+  margin-top:8%;
+  margin-right:10%;
+}
 
 
 
