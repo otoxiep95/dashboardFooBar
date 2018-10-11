@@ -31,7 +31,7 @@ function init() {
 function nextDesc() {
   console.log("next");
 
-  if (index === beerDescArray.length) {
+  if (index === beerDescArray.length - 1) {
     index = 0;
   } else {
     index++;
@@ -42,7 +42,7 @@ function nextDesc() {
 function preDesc() {
   console.log("previous");
   if (index === 0) {
-    index = beerDescArray.length;
+    index = beerDescArray.length - 1;
   } else {
     index--;
   }
@@ -60,6 +60,11 @@ function showAlc() {
 
   document.querySelector("#alc-screen").classList.remove("none");
   document.querySelector("#alc-screen").classList.add("here");
+
+  document.querySelector("#type-button").classList.remove("button_active");
+  document.querySelector("#tap-button").classList.remove("button_active");
+  document.querySelector("#desc-button").classList.remove("button_active");
+  document.querySelector("#alc-button").classList.add("button_active");
 }
 
 function showTap() {
@@ -72,6 +77,11 @@ function showTap() {
 
   document.querySelector("#tap-screen").classList.add("here");
   document.querySelector("#tap-screen").classList.remove("none");
+
+  document.querySelector("#alc-button").classList.remove("button_active");
+  document.querySelector("#type-button").classList.remove("button_active");
+  document.querySelector("#desc-button").classList.remove("button_active");
+  document.querySelector("#tap-button").classList.add("button_active");
 }
 
 function showDesc() {
@@ -84,6 +94,11 @@ function showDesc() {
 
   document.querySelector("#desc-screen").classList.add("here");
   document.querySelector("#desc-screen").classList.remove("none");
+
+  document.querySelector("#alc-button").classList.remove("button_active");
+  document.querySelector("#tap-button").classList.remove("button_active");
+  document.querySelector("#type-button").classList.remove("button_active");
+  document.querySelector("#desc-button").classList.add("button_active");
 }
 
 function showType() {
@@ -96,6 +111,11 @@ function showType() {
 
   document.querySelector("#type-screen").classList.add("here");
   document.querySelector("#type-screen").classList.remove("none");
+
+  document.querySelector("#alc-button").classList.remove("button_active");
+  document.querySelector("#tap-button").classList.remove("button_active");
+  document.querySelector("#desc-button").classList.remove("button_active");
+  document.querySelector("#type-button").classList.add("button_active");
 }
 
 function displayBeerTypes(data) {
