@@ -25,9 +25,9 @@ function updateTaps(newdata) {
     // console.log(levelId);
 
     let tap = document.querySelector(`#${levelId}`);
-    let height = element.level / 10;
+    let height = element.level / 6.25;
     tap.setAttribute("height", height);
-    tap.setAttribute("y", 250 - height);
+    tap.setAttribute("y", 400 - height);
     let levelNumber =
       tap.parentElement.parentElement.nextElementSibling.firstElementChild;
     levelNumber.textContent = (element.level * 100) / 2500 + "%";
@@ -44,17 +44,17 @@ function displayTaps(data) {
 
     let clone = tapTemplate.cloneNode(true);
     // MISSING PERCENTAGES
-    clone.querySelector(".beer-name").textContent =
+    clone.querySelector(".percentage-tap").textContent =
       (element.level * 100) / 2500 + "%";
     rect.setAttribute("width", 100);
-    let height = element.level / 5;
+    let height = element.level / 6.25;
     rect.setAttribute("height", height);
-    rect.setAttribute("y", 500 - height);
+    rect.setAttribute("y", 400 - height);
     rect.classList.add("level");
 
     rect.id = "tap" + element.id;
     console.log(element.beer);
-    let beerImage = beerTypesArray.find(function(beerName) {
+    let beerImage = beerTypesArray.find(function (beerName) {
       return beerName.name === element.beer;
     });
     console.log(beerImage);
