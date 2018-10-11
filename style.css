@@ -51,25 +51,34 @@ header {
 }
 
 #tap-screen {
-  background: url(tap_background.jpg), rgba(94, 22, 5, 0.6);
+  background: url(tap_background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-blend-mode: multiply;
+
 }
 
 #alc-screen{
-  background: url(beer-3445988_1280.jpg), rgba(94, 22, 5, 0.6);
+  background: url(beer-3445988_1280.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-blend-mode: multiply;
+
   
 }
 
 #type-screen{
-  background: url(wheat-3241114_1280.jpg), rgba(94, 22, 5, 0.6);
+  background: url(wheat-3241114_1280.jpg);
   background-size: cover;
   background-repeat: no-repeat;
-  background-blend-mode: multiply;
+ 
+  
+}
+
+#desc-screen{
+  background: url(desc-background.jpg);
+  background-size: cover;
+  background-position-x: right;
+  background-repeat: no-repeat;
+  /* background-blend-mode: overlay; */
   
 }
 
@@ -87,7 +96,26 @@ header {
   margin: 4% 4% 3% 2%;
 
   overflow-y: scroll;
+  background: rgba(7, 23, 58, 0.2);
+  background-blend-mode:overlay;
 }
+
+#type-container, #desc-container, #alcohol-container{
+  width: 80%;
+  height: 70%;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding-top: 0%;
+  margin-top:18%;
+  margin-left:auto;
+  margin-right:auto;
+  margin-bottom:auto;
+  overflow-x:scroll;
+}
+
 
 /* TAP  */
 
@@ -248,9 +276,7 @@ ol{
   margin-top: 15%;
 }
 
-#tap-button {
-  opacity: 0.3;
-}
+
 
 /* HEADER */
 
@@ -269,7 +295,6 @@ header {
   width: 80%;
   height: 10vh;
   float: right;
-
   padding: 5% 5% 5% 5%;
 }
 
@@ -321,18 +346,6 @@ header h1 {
 
 /* ALCOHOL */
 
-#alcohol-container{
-  width: 80%;
-  height: 80%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding-top: 10%;
-  margin: auto;
-}
-
 td{
   padding-top:2%;
 }
@@ -356,18 +369,6 @@ td{
 
 /* TYPE */
 
-#type-container{
-  width: 80%;
-  height: 80%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding-top: 10%;
-  margin: auto;
-}
-
 .type-name{
   font-size:1.3em;
   width:64%;
@@ -376,22 +377,14 @@ td{
 /* DESC */
 
 #desc-container{
-  width: 80%;
-  height: 80%;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  padding-top: 10%;
-  margin: auto;
   display:grid;
   grid-template-columns: repeat(6,1fr);
   overflow-y:scroll;
 }
 
+
 .desc-icon{
-  width:50%;
+  width:40%;
   grid-column:1/2;
   margin-left:15%;
   margin-top:15%;
@@ -409,6 +402,7 @@ td{
 
 .beer-title{
   padding:0;
+  margin-top:5%;
   width:70%;
   font-size:1.3em;
 }
@@ -429,9 +423,6 @@ td{
   margin-right:10%;
 }
 
-
-
-
 /* CLASS JS */
 
 .none{
@@ -441,3 +432,49 @@ td{
 .here{
   display:block;
 }
+
+.button_active {
+  opacity: 0.3;
+}
+
+@media screen and (max-width: 1024px) {
+  .screen-container h1{
+    font-size:1.5em;
+  }
+
+  .title-queue{
+    font-size:1.5em;
+  }
+
+  .type-name{
+    /* width:55%; */
+    font-size:1.1em;
+  }
+  .beer-name{
+    font-size:1.1em;
+  }
+
+.bartender-container {
+  width: 92%;
+  height: 10vh;
+  float: right;
+  padding: 5% 5% 5% 5%;
+}
+
+.time-container h1{
+  font-size:1.5em;
+}
+
+.percentage-tap{
+  font-size:1.1em;
+}
+
+.order-item p{
+  font-size:1.5em;
+}
+
+#previous, #next{
+  font-size:1.7em;
+}
+}
+
