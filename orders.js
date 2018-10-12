@@ -11,7 +11,6 @@ function init() {
   buildQueue(data);
 
   setInterval(update, 5000);
-  //setInterval(show, 5000);
 }
 init();
 
@@ -24,8 +23,6 @@ function update() {
 function buildQueue(data) {
   let queueArray = data.queue;
   let beerTypesArray = data.beertypes;
-  //let bartendersArray = data.bartenders;
-  //console.log(queueArray);
 
   queueArray.forEach(customerOrder => {
     //set variuables
@@ -56,11 +53,6 @@ function buildQueue(data) {
     showQueueItem(result);
     //end outer foreach
   });
-
-  //console.log(beerTypesArray);
-  //console.log(result);
-
-  // queueList.appendChild(clone);
 }
 
 function updateQueue(data) {
